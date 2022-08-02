@@ -38,10 +38,10 @@ func main() {
   i := bw.Get()
 
   // worker is doing some work
-  // and is returning an int
   worker(i)
 
   // return i back into the pool
+  // after worker is done with i
   bw.Return(i)
 }
 ```
