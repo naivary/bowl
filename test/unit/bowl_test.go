@@ -118,7 +118,7 @@ func TestReturnLimit(t *testing.T) {
 
 }
 
-func GetConcurrently(t *testing.T) {
+func TetstGetConcurrently(t *testing.T) {
 	b := bowl.New(5, fn)
 	i := 0
 
