@@ -1,8 +1,8 @@
 # BOWL <br>
 
-Bowl is a simple and lighweight in-memory pool. It is
-safe for concurrent use and is using generics to resever the
-advantages of type safety provided by Go.
+Bowl is a simple and lighweight in-memory pool without any dependencies.
+It is safe for concurrent use and is using generics to reseve
+the advantages of type safety provided by Go.
 
 # Install
 
