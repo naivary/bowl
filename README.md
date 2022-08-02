@@ -1,4 +1,5 @@
-**BOWL** <br>
+# BOWL <br>
+
 Bowl is a simple and lighweight in-memory pool. It is
 safe for concurrent use and is using generics to resever the
 advantages of type safety provided by Go.
