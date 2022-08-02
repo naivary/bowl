@@ -33,15 +33,15 @@ func main() {
   bw := bowl.New(0, newFn)
 
   // get an object from
-  // the pool. If tehere are none newFn
+  // the bowl. If tehere are none newFn
   // will be used to create one
   i := bw.Get()
 
   // worker is doing some work
   worker(i)
 
-  // return i back into the pool
-  // after worker is done with i
+  // return `i` back to the bowl
+  // after worker is done with the work
   bw.Return(i)
 }
 ```
