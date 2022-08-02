@@ -7,7 +7,7 @@ import (
 var DefaultMax int32 = 5
 
 type Bowler[T any] interface {
-	New() T
+	Get() T
 	Return(T)
 }
 
