@@ -68,7 +68,10 @@ func (b *Bowl[T]) Return(o T, args ...any) {
 
 }
 
-// Get is retrieving `T` from the bowl
+// Get is retrieving `T` from the bowl. If
+// the bowl is empty, it will create a new
+// element using the `new` function provided
+// while creating the bowl.
 func (b *Bowl[T]) Get() T {
 	if len(b.pool) > 0 {
 		b.decrementSize(-1)
