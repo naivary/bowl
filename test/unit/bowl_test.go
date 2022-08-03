@@ -161,3 +161,34 @@ func TetstGetConcurrently(t *testing.T) {
 	}
 
 }
+
+func TestCleanGet(t *testing.T) {
+	type mock struct {
+		username string
+		password string
+	}
+
+	n := func() mock {
+		return mock{}
+	}
+
+	b := bowl.New(0, n)
+
+	b.SetClean(func(o *mock, a ...any) {
+		o.password = ""
+		o.username = ""
+	})
+
+	m := mock{username: "musti", password: "password"}
+
+	b.Return(m)
+
+	mclean := b.Get()
+
+	switch {
+	case mclean.password != "":
+		t.Errorf("result should be cleand. Expected empty string. Got: %v", mclean.password)
+	case mclean.username != "":
+		t.Errorf("result should be cleand. Expected empty string. Got: %v", mclean.username)
+	}
+}

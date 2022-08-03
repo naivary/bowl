@@ -17,7 +17,7 @@ type Bowl[T any] struct {
 
 	// clean will clean the object.
 	// Default will be an empty function.
-	clean func(T, ...any)
+	clean func(*T, ...any)
 
 	// size is the maximum number
 	// of elements that the pool can
@@ -46,7 +46,7 @@ func New[T any](max int32, new func() T) Bowl[T] {
 		pool:  make(chan T, max),
 		max:   max,
 		new:   new,
-		clean: func(o T, args ...any) {},
+		clean: func(o *T, args ...any) {},
 	}
 
 	return b
@@ -62,7 +62,7 @@ func (b *Bowl[T]) Return(o T, args ...any) {
 		return
 	}
 
-	b.clean(o, args)
+	b.clean(&o, args)
 	b.incrementSize(1)
 	b.pool <- o
 
