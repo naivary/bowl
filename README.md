@@ -27,7 +27,7 @@ func main() {
 
   // create a new bowl with the default
   // limit which is 5. You can change it by
-  // setting bowl.DefaultMax. newFn is the
+  // setting bowl.DefaultMax. `fn` is the
   // factory that will be used.
   bw := bowl.New(0, fn)
 
