@@ -11,7 +11,7 @@ go get github.com/naivary/bowl
 
 # Example usage
 
-```Go
+```go
 
 import (
   "math/rand"
@@ -46,5 +46,6 @@ func main() {
   // be done. Its recommended to
   // defer the bw.Return(i).
   bw.Return(i)
+
 }
 ```

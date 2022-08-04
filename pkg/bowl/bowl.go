@@ -42,14 +42,12 @@ func New[T any](max int32, new func() T) Bowl[T] {
 		max = DefaultLimit
 	}
 
-	b := Bowl[T]{
+	return Bowl[T]{
 		pool:  make(chan T, max),
 		max:   max,
 		new:   new,
 		clean: func(o *T, args ...any) {},
 	}
-
-	return b
 
 }
 
