@@ -1,4 +1,4 @@
-# BOWL <br>
+# Bowl <br>
 
 Bowl is a simple and lighweight in-memory pool without any dependencies.
 It is safe for concurrent use and is using generics to reseve type safety.
