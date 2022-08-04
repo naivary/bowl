@@ -1,8 +1,7 @@
 # BOWL <br>
 
 Bowl is a simple and lighweight in-memory pool without any dependencies.
-It is safe for concurrent use and is using generics to reseve
-the advantages of type safety provided by Go.
+It is safe for concurrent use and is using generics to reseve type safety.
 
 # Install
 
@@ -19,7 +18,7 @@ import (
   "github.com/naivary/bowl"
 )
 
-newFn := func() int {
+fn := func() int {
   return rand.Int()
 }
 
@@ -30,7 +29,7 @@ func main() {
   // limit which is 5. You can change it by
   // setting bowl.DefaultMax. newFn is the
   // factory that will be used.
-  bw := bowl.New(0, newFn)
+  bw := bowl.New(0, fn)
 
   // get an object from
   // the bowl. If tehere are none newFn
@@ -41,7 +40,7 @@ func main() {
   worker(i)
 
   // return `i` back to the bowl
-  // after worker is done with the work
+  // after worker is done.
   bw.Return(i)
 }
 ```
